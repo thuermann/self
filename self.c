@@ -1,4 +1,12 @@
+/*
+ * $Id: self.c,v 1.2 2011/10/24 07:15:52 urs Exp $
+ */
+
 char *a[] = {
+    "/*",
+    " * $Id: self.c,v 1.2 2011/10/24 07:15:52 urs Exp $",
+    " */",
+    "",
     "char *a[] = {",
     "};",
     "",
@@ -10,10 +18,11 @@ char *a[] = {
     "{",
     "    int i, n = sizeof(a) / sizeof(*a);",
     "",
-    "    puts(a[0]);",
+    "    for (i = 0; i < 5; i++)",
+    "        puts(a[i]);",
     "    for (i = 0; i < n; i++)",
     "        printf(fmt, a[i]);",
-    "    for (i = 1; i < n; i++)",
+    "    for (i = 5; i < n; i++)",
     "        puts(a[i]);",
     "    return 0;",
     "}",
@@ -27,10 +36,11 @@ int main(void)
 {
     int i, n = sizeof(a) / sizeof(*a);
 
-    puts(a[0]);
+    for (i = 0; i < 5; i++)
+        puts(a[i]);
     for (i = 0; i < n; i++)
         printf(fmt, a[i]);
-    for (i = 1; i < n; i++)
+    for (i = 5; i < n; i++)
         puts(a[i]);
     return 0;
 }
