@@ -1,0 +1,9 @@
+This is a solution to a simple puzzle from the ACM article "Reflections
+on Trusting Trust" by Ken Thompson.  The goal is to write a program that
+prints its own source code:
+
+$ cc -o self self.c
+$ ./self > self.out
+$ diff self.c self.out
+
+The last command should not produce any differences.
